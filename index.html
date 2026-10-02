@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ee">
+  <title>Quran PESAT</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#quran" aria-label="Quran PESAT, halaman Al-Qur'an">
+      <span class="brand-mark" aria-hidden="true">ق</span>
+      <span><strong>Quran <i>PESAT</i></strong><small>Ruang belajar Al-Qur’an</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Menu utama">
+      <button class="nav-link is-active" type="button" data-view="quran" aria-current="page">Al-Qur’an</button>
+      <button class="nav-link" type="button" data-view="mentor">Mentor Murajaah</button>
+    </nav>
+    <span class="topbar-note"><span class="live-dot"></span> Belajar, satu ayat demi satu ayat</span>
+  </header>
+
+  <main>
+    <section id="quran-view" class="view quran-view" aria-labelledby="quran-heading">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">JELAJAHI & BACA</p>
+          <h1 id="quran-heading">Al-Qur’an</h1>
+          <p class="heading-copy">Pilih surat untuk membaca ayat dan terjemahannya.</p>
+        </div>
+        <div class="source-note"><span class="source-symbol" aria-hidden="true">↗</span><span>Teks ayat dan terjemahan<br>dimuat langsung dari eQuran.id</span></div>
+      </div>
+
+      <div class="quran-layout">
+        <aside class="surah-panel" aria-label="Daftar surat">
+          <div class="panel-title-row">
+            <div><p class="eyebrow">DAFTAR SURAT</p><h2>Pilih bacaan</h2></div>
+            <span id="surah-count" class="count-mark">—</span>
+          </div>
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="surah-search" type="search" placeholder="Cari nama surat" autocomplete="off" aria-label="Cari nama surat">
+          </label>
+          <p id="surah-list-status" class="inline-status" role="status">Memuat daftar surat...</p>
+          <div id="surah-list" class="surah-list"></div>
+        </aside>
+
+        <section class="reading-panel" aria-live="polite" aria-label="Isi surat">
+          <div id="surah-detail-status" class="empty-reading">
+            <span class="empty-glyph" aria-hidden="true">۞</span>
+            <p class="eyebrow">MULAI MEMBACA</p>
+            <h2>Pilih satu surat</h2>
+            <p>Ayat-ayatnya akan muncul di sini.</p>
+          </div>
+          <div id="surah-detail" hidden></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="mentor-view" class="view mentor-view" aria-labelledby="mentor-heading" hidden>
+      <div class="page-heading mentor-heading">
+        <div>
+          <p class="eyebrow">LATIHAN HAFALAN</p>
+          <h1 id="mentor-heading">Mentor <span>Murajaah</span></h1>
+          <p class="heading-copy">Uji ingatanmu dengan ayat dari surat yang sedang dipelajari.</p>
+        </div>
+        <div class="score-box" aria-live="polite"><span>SKOR</span><strong id="score">0</strong><small>poin</small></div>
+      </div>
+
+      <div class="mentor-layout">
+        <aside class="mentor-rail">
+          <p class="eyebrow">PILIH LATIHAN</p>
+          <div class="mode-switch" role="group" aria-label="Mode latihan">
+            <button type="button" class="mode-button is-selected" data-mode="guess" aria-pressed="true"><span class="mode-number">01</span><span><strong>Tebak Ayat</strong><small>Ingat nomor ayat</small></span></button>
+            <button type="button" class="mode-button" data-mode="connect" aria-pressed="false"><span class="mode-number">02</span><span><strong>Sambung Ayat</strong><small>Ingat ayat berikutnya</small></span></button>
+          </div>
+          <div class="mentor-surah-note">
+            <span class="note-line"></span>
+            <p class="eyebrow">SURAT PILIHAN</p>
+            <strong id="mentor-surah-name">Belum dipilih</strong>
+            <span id="mentor-surah-meta">Pilih surat di menu Al-Qur’an</span>
+            <button type="button" class="text-button" data-view="quran">Pilih surat <span aria-hidden="true">→</span></button>
+          </div>
+        </aside>
+
+        <section class="quiz-panel" aria-label="Latihan murajaah">
+          <div class="quiz-topline"><span id="quiz-mode-label">TEBAK AYAT</span><span class="question-index">SOAL <strong id="question-number">01</strong></span></div>
+          <div id="quiz-content" aria-live="polite">
+            <div class="quiz-placeholder"><span aria-hidden="true">✳</span><p>Pilih surat terlebih dahulu untuk memulai latihan.</p></div>
+          </div>
+          <div class="quiz-actions">
+            <button id="next-question" class="button button-primary" type="button" disabled>Soal Berikutnya <span aria-hidden="true">→</span></button>
+            <button id="restart-quiz" class="button button-secondary" type="button">Mulai Lagi <span aria-hidden="true">↺</span></button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><span>Quran PESAT</span><span>Belajar dengan tenang, murajaah dengan tekun.</span></footer>
+</body>
+</html>
